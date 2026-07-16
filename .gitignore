@@ -1,0 +1,25 @@
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.sw?

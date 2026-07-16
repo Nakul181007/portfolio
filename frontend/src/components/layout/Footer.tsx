@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="relative z-10 border-t border-[var(--border)] py-10">
       <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="font-mono text-sm text-[var(--fg-muted)]">
-          © {year} <span className="gradient-text font-semibold">Samarth Kale</span>. Built with FastAPI + React.
+          © {year} <span className="gradient-text font-semibold">Nakul Dalal</span>. Built with FastAPI + React.
         </p>
         <div className="flex items-center gap-4">
           {[

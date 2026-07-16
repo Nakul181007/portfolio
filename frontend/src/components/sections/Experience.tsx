@@ -1,12 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Trophy, FlaskConical, Presentation, MapPin, Calendar } from 'lucide-react'
+import { Trophy, FlaskConical, Presentation, MapPin, Calendar, Briefcase } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import { fetchExperience } from '@/lib/api'
 import { staggerContainer, fadeSlideUp } from '@/lib/motion'
 import type { Experience } from '@/types'
 
 const TYPE_META: Record<string, { icon: React.ReactNode; label: string; color: string }> = {
+  job: {
+    icon: <Briefcase size={14} />,
+    label: 'Professional',
+    color: 'text-[var(--node)] border-[var(--node)]/40 bg-[var(--node)]/10',
+  },
   hackathon: {
     icon: <Trophy size={14} />,
     label: 'Hackathon',
@@ -15,7 +20,7 @@ const TYPE_META: Record<string, { icon: React.ReactNode; label: string; color: s
   research: {
     icon: <FlaskConical size={14} />,
     label: 'Research',
-    color: 'text-[var(--node)] border-[var(--node)]/40 bg-[var(--node)]/10',
+    color: 'text-purple-400 border-purple-400/40 bg-purple-400/10',
   },
   workshop: {
     icon: <Presentation size={14} />,

@@ -2,23 +2,23 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { fadeSlideUp, fadeSlideLeft, staggerContainer } from '@/lib/motion'
-import { Brain, Code2, Users } from 'lucide-react'
+import { Terminal, Code2, Award } from 'lucide-react'
 
 const HIGHLIGHTS = [
   {
-    icon: <Brain size={22} />,
-    title: 'AI / ML',
-    desc: 'Building intelligent systems — from fine-tuning transformers to deploying models on the edge.',
+    icon: <Terminal size={22} />,
+    title: 'Languages & Core',
+    desc: 'Expertise in C++, Java, and Python with a strong foundation in Data Structures and Algorithms.',
   },
   {
     icon: <Code2 size={22} />,
     title: 'Full-Stack Dev',
-    desc: 'End-to-end engineering: FastAPI backends, React frontends, and everything in between.',
+    desc: 'Building robust, modern web apps with React, Vite, FastAPI, and Spring Boot.',
   },
   {
-    icon: <Users size={22} />,
-    title: 'Workshop Facilitator',
-    desc: 'Designed and led 10+ technical workshops for 50–120 students each, on ML and software engineering.',
+    icon: <Award size={22} />,
+    title: 'Placement & Leadership',
+    desc: 'Secured top technical placements; mentored peers and coordinated preparation bootcamps.',
   },
 ]
 
@@ -44,18 +44,13 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-[var(--fg-muted)] leading-relaxed text-lg">
               <p>
-                I'm a Computer Engineering student passionate about making machines smarter and
-                software more human. My work spans research-level ML (transformer fine-tuning, vector
-                search, on-device inference) and production full-stack systems.
+                I'm a Computer Engineering student at FCRIT Navi Mumbai passionate about building high-performance backend systems and elegant, interactive frontend interfaces. My development workflow centers around building with Core Java, C++, Python, and React.
               </p>
               <p>
-                Beyond building, I teach — I've designed curriculum and facilitated workshops that
-                have introduced hundreds of students to PyTorch, LLMs, and modern web development.
-                Teaching sharpens my own understanding as much as it helps others.
+                With a deep focus on Data Structures, Algorithms, and Object-Oriented Design, I have secured pre-placement offers and built multiple real-world full-stack projects. I also enjoy mentoring juniors and helping peers prepare for tech placements.
               </p>
               <p>
-                I'm looking for opportunities where I can contribute meaningfully to AI/ML products,
-                ship reliable software, and keep learning from great engineers.
+                I'm looking for full-time opportunities where I can solve complex engineering challenges, write clean and efficient code, and ship high-impact software systems.
               </p>
             </div>
           </motion.div>

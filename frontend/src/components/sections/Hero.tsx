@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { letterVariant, staggerFast, fadeSlideUp } from '@/lib/motion'
 import { ArrowDown } from 'lucide-react'
 
-const NAME = 'Samarth Kale'
-const TAGLINE = 'Computer Engineer · AI/ML · Full-Stack · Workshop Facilitator'
+const NAME = 'Nakul Dalal'
+const TAGLINE = 'Software Engineer · Java · C++ · Python · React · High-Performance Apps'
 
 export default function Hero() {
   return (
