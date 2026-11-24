@@ -1,8 +1,6 @@
 # Python
 **/__pycache__/
-**/*.pyc
-**/*.pyo
-**/*.pyd
+**/*.py[cod]
 .Python
 env/
 venv/
@@ -10,13 +8,22 @@ venv/
 .pytest_cache/
 .mypy_cache/
 
+# Local databases and runtime data
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
 # Node
 node_modules/
 dist/
 dist-ssr/
 *.local
+
+# Environment and secrets
 .env
-.env.*.local
+.env.*
+!.env.example
 
 # IDE
 .vscode/
