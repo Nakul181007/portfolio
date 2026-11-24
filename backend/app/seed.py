@@ -1,8 +1,7 @@
-"""Seed verified portfolio data for Nakul Dalal."""
+"""Seed verified portfolio data without overwriting existing database content."""
 from .database import SessionLocal
 from .models import Project, Skill, Experience
 
-# Keep project claims aligned with the public repositories and their READMEs.
 PROJECTS = [
     {
         "title": "ClimateAI Maharashtra",
@@ -46,7 +45,6 @@ PROJECTS = [
     },
 ]
 
-# Skills are presented as technologies/tools, not self-assigned proficiency percentages.
 SKILLS = [
     {"name": "C", "category": "Languages", "level": 1},
     {"name": "Java", "category": "Languages", "level": 1},
@@ -89,20 +87,19 @@ EXPERIENCE = [
 
 
 def seed():
+    """Insert verified starter content only when each table is empty."""
     db = SessionLocal()
     try:
-        db.query(Project).delete()
-        db.query(Skill).delete()
-        db.query(Experience).delete()
+        if db.query(Project).count() == 0:
+            db.add_all([Project(**project) for project in PROJECTS])
+        if db.query(Skill).count() == 0:
+            db.add_all([Skill(**skill) for skill in SKILLS])
+        if db.query(Experience).count() == 0:
+            db.add_all([Experience(**item) for item in EXPERIENCE])
         db.commit()
-
-        db.add_all([Project(**p) for p in PROJECTS])
-        db.add_all([Skill(**s) for s in SKILLS])
-        db.add_all([Experience(**e) for e in EXPERIENCE])
-        db.commit()
-        print("[OK] Database seeded with verified portfolio information")
-    except Exception as e:
+        print("[OK] Portfolio starter content checked")
+    except Exception as exc:
         db.rollback()
-        print(f"[ERROR] Failed to seed database: {e}")
+        print(f"[ERROR] Failed to seed database: {exc}")
     finally:
         db.close()
