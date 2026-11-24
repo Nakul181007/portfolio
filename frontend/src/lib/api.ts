@@ -2,7 +2,9 @@ import axios from 'axios'
 import type { Project, Skill, Experience, ContactRequest, ContactResponse } from '@/types'
 
 const api = axios.create({
-  baseURL: '/api',
+  // Set VITE_API_URL to the deployed API origin plus /api in production.
+  // Local development continues to use the Vite /api proxy.
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
