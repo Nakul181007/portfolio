@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: nakul-dalal-portfolio-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://nakul-dalal-portfolio.onrender.com
+
+  - type: web
+    name: nakul-dalal-portfolio
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://nakul-dalal-portfolio-api.onrender.com/api
